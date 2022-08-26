@@ -13,8 +13,8 @@ namespace Arrays
         {
             //Test();
             //MainMenu();
-            Monster();
-
+            //Monster();
+            readFiles();
         }
 
         static void Test()
@@ -55,15 +55,21 @@ namespace Arrays
 
             string input = "";
 
-            for (int i = 0; i < answer.Length; i++) ;
+            for (int i = 0; i < answer.Length; i++)
             {
-
+                input = input + answer[i] + ";";
             }
 
             Console.ReadKey();
             
-            File.WriteAllText(@"c:\Users\Jonas\source\repos\MonsterArray\MonsterArray\data_files\test_file.dat", input, Encoding.Unicode);
+            File.WriteAllText(@"c:\Users\Jonas\source\repos\MonsterArray\MonsterArray\data_files\test_file.txt", input, Encoding.Unicode);
 
+        }
+
+        static void readFiles()
+        {
+            string text = File.ReadAllText(@"c:\Users\Jonas\source\repos\MonsterArray\MonsterArray\data_files\efternavne.dat");
+            Console.WriteLine(text);
         }
     }
 }
